@@ -1,0 +1,13 @@
+stages:
+  - test
+
+playwright_tests:
+  stage: test
+  image: mcr.microsoft.com/playwright/focal
+  script:
+    - npm install
+    - npx playwright install
+    - npx playwright test --reporter=html
+  artifacts:
+    paths:
+      - playwright-report/
