@@ -1,7 +1,7 @@
 {
-  "name": "The-Movie-Central",
+  "name": "tu-proyecto",
   "version": "1.0.0",
-  "description": "QA Automation",
+  "description": "Descripción de tu proyecto",
   "main": "index.js",
   "scripts": {
     "pretest": "mkdir -p playwright-report",
