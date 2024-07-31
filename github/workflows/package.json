@@ -1,0 +1,6 @@
+{
+  "scripts": {
+    "pretest": "mkdir -p playwright-report",
+    "test": "npx playwright test"
+  }
+}
