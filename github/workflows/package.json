@@ -13,4 +13,11 @@
   "devDependencies": {
     "playwright": "^1.15.0"
   }
+  {
+  "scripts": {
+    "pretest": "mkdir -p playwright-report",
+    "test": "npx playwright test"
+  }
+}
+
 }
