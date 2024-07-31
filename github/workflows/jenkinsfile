@@ -1,0 +1,35 @@
+pipeline {
+    agent {
+        docker {
+            image 'mcr.microsoft.com/playwright/focal'
+        }
+    }
+    stages {
+        stage('Install Dependencies') {
+            steps {
+                script {
+                    sh 'npm install'
+                }
+            }
+        }
+        stage('Install Playwright') {
+            steps {
+                script {
+                    sh 'npx playwright install'
+                }
+            }
+        }
+        stage('Run Playwright Tests') {
+            steps {
+                script {
+                    sh 'npx playwright test --reporter=html'
+                }
+            }
+        }
+    }
+    post {
+        always {
+            archiveArtifacts artifacts: 'playwright-report/**', allowEmptyArchive: true
+        }
+    }
+}
