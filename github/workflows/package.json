@@ -1,6 +1,16 @@
 {
+  "name": "The-Movie-Central",
+  "version": "1.0.0",
+  "description": "QA Automation",
+  "main": "index.js",
   "scripts": {
     "pretest": "mkdir -p playwright-report",
     "test": "npx playwright test"
+  },
+  "keywords": [],
+  "author": "Tu Nombre",
+  "license": "ISC",
+  "devDependencies": {
+    "playwright": "^1.15.0"
   }
 }
