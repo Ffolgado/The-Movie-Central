@@ -32,8 +32,12 @@ jobs:
       - name: Install Playwright browsers
         run: npx playwright install --with-deps
 
+      - name: Create report directory
+        run: mkdir -p playwright-report
+
       - name: Run Playwright tests
         run: npx playwright test --project=${{ matrix.browser }}
 
       - name: Generate Playwright report
         run: npx playwright show-report
+
