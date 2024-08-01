@@ -3,10 +3,10 @@
     "pretest": "mkdir -p playwright-report",
     "test": "npx playwright test"
   }
-}
 "scripts": {
-  "build": "comando_para_construir_tu_proyecto"
+  "build": "webpack --config webpack.config.js"
 }
+
 
 
 
