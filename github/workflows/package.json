@@ -4,5 +4,9 @@
     "test": "npx playwright test"
   }
 }
+"scripts": {
+  "build": "comando_para_construir_tu_proyecto"
+}
+
 
 
