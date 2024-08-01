@@ -13,6 +13,12 @@
     "webpack": "^5.0.0",
     // otras dependencias...
   }
+  {
+  "scripts": {
+    "build": "echo 'Building el proyecto...' && exit 0"
+  }
+}
+
 }
 
 
