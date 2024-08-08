@@ -1,23 +1,17 @@
 {
-  "name": "The-Movie-Central",
+  "name": "new-movie-central",
   "version": "1.0.0",
-  "description": "",
+  "description": "Proyecto de New Movie Central",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/usuario/The-Movie-Central.git"
-  },
-  "keywords": [],
-  "author": "",
+  "author": "Fatima Del Rey Folgado",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/usuario/The-Movie-Central/issues"
-  },
-  "homepage": "https://github.com/usuario/The-Movie-Central#readme"
+  "dependencies": {
+    // Aquí añades tus dependencias, por ejemplo:
+    "express": "^4.17.1"
+  }
 }
-
-
 
