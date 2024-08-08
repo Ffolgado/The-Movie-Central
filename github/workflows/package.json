@@ -1,16 +1,7 @@
 {
-  "name": "new-movie-central",
-  "version": "1.0.0",
-  "description": "Proyecto de New Movie Central",
-  "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Fatima Del Rey Folgado",
-  "license": "ISC",
-  "dependencies": {
-    "express": "^4.17.1"
+    "start": "node server.js"
   }
 }
+
 
