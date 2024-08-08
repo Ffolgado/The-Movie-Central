@@ -1,21 +1,23 @@
 {
-  "name": "mi-proyecto",
+  "name": "The-Movie-Central",
   "version": "1.0.0",
-  "description": "Descripción de mi proyecto",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --config webpack.config.js",
-    "start": "node index.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Tu Nombre",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/usuario/The-Movie-Central.git"
+  },
+  "keywords": [],
+  "author": "",
   "license": "ISC",
-  "dependencies": {
-    "webpack": "^5.0.0"
-    // otras dependencias...
-  }
+  "bugs": {
+    "url": "https://github.com/usuario/The-Movie-Central/issues"
+  },
+  "homepage": "https://github.com/usuario/The-Movie-Central#readme"
 }
-
-
 
 
 
