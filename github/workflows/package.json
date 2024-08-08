@@ -10,7 +10,6 @@
   "author": "Fatima Del Rey Folgado",
   "license": "ISC",
   "dependencies": {
-    // Aquí añades tus dependencias, por ejemplo:
     "express": "^4.17.1"
   }
 }
