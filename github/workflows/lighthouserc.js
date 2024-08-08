@@ -1,8 +1,7 @@
 {
   "ci": {
     "collect": {
-      "staticDistDir": "path/to/your/static/files"
+      "staticDistDir": "/Users/fatimaqa/Desktop/the new central/The-Movie-Central/movie-central-tests/static"
     }
   }
 }
-
