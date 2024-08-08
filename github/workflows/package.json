@@ -1,7 +1,5 @@
 {
   "scripts": {
-    "start": "node server.js"
+    "lhci:collect": "lhci collect --collect.staticDistDir=\"/Users/fatimaqa/Desktop/the new central\""
   }
 }
-
-
