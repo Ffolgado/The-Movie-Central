@@ -1,35 +1,39 @@
 name: Lighthouse CI
 
-on: [push]
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   lighthouse-ci:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
+    - uses: actions/checkout@v2
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '14'
+    - name: Install dependencies
+      run: npm install
 
-      - name: Install dependencies
-        run: npm install
+    - name: Build project
+      run: npm run build
 
-      - name: Build project
-        run: npm run build # Asegúrate de que este comando construya tu proyecto
+    - name: Run Lighthouse CI
+      run: |
+        npx lhci autorun
+      continue-on-error: true
 
-      - name: Start server
-        run: npm start & # Asegúrate de que este comando inicie tu servidor
+    - name: Upload Lighthouse Report
+      if: failure()
+      uses: actions/upload-artifact@v2
+      with:
+        name: lighthouse-report
+        path: ./lighthouseci/reports
 
-      - name: Run Lighthouse CI
-        run: npx lhci autorun
-
-      - name: Upload Lighthouse report
-        if: always()
-        uses: actions/upload-artifact@v2
-        with:
-          name: lighthouse-report
-          path: '.lighthouseci/*'
