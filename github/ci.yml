@@ -1,0 +1,49 @@
+name: Node.js CI Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [14.x, 16.x]  # Puedes cambiar la versión de Node.js según tus necesidades
+        test-group: [all]            # Puedes especificar diferentes grupos de pruebas si lo necesitas
+
+    steps:
+      - name: Check out the code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run Tests
+        run: npm test -- --group=${{ matrix.test-group }}
+
+      - name: Generate Coverage Report
+        run: npm run test -- --coverage
+
+      - name: Upload Coverage Report
+        if: failure()
+        uses: actions/upload-artifact@v3
+        with:
+          name: coverage-report
+          path: ./coverage
+
+      - name: Upload Jest Results
+        uses: actions/upload-artifact@v3
+        with:
+          name: jest-results
+          path: jest-results.json
