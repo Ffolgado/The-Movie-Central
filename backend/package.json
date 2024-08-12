@@ -1,19 +1,17 @@
-{
-  "name": "backend",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
-  "devDependencies": {
-    "@eslint/js": "^9.8.0",
-    "eslint": "^9.8.0",
-    "globals": "^15.9.0",
-    "typescript": "^5.5.4",
-    "typescript-eslint": "^8.0.1"
-  }
-}
+// jest.config.js
+
+const dotenv = require('dotenv');
+const path = require('path');
+
+// Configura la ruta del archivo .env dependiendo del entorno
+const envFile = process.env.NODE_ENV ? `.env.${process.env.NODE_ENV}` : '.env`;
+
+// Carga las variables de entorno desde el archivo correspondiente
+dotenv.config({ path: path.resolve(__dirname, envFile) });
+
+module.exports = {
+  // Resto de la configuración de Jest
+  testEnvironment: 'node',
+  // otras configuraciones que necesites...
+};
+
